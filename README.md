@@ -9,7 +9,7 @@ to the conditions above.
 
 # Requirement
 You must have python version 3 or latest installed on your machine<br>
-(Unix-like Distro only, sorry windows user, i'm not part of ur community).
+(Unix-like Distro only like from Linux, BSD or MacOS. I'm sorry windows user, i'm not part of ur community).
 
 # Must Change First
 ## Configuration:
