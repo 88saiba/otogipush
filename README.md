@@ -1,4 +1,4 @@
-# otogipush
+# otogpy
 Shortens the process of adding, committing, and pushing changes from your local repo to GitHub.<br>
 This script is useful if you have multiple GitHub accounts and want to avoid displaying your<br>
 personal access token on screen during a live stream. Just run this script.<br>
