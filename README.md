@@ -1,6 +1,10 @@
 # otogipush
 Shortens git add, commit, and push your local repo to github, useful if you have several github accounts and you don't want to show your personal access token on the screen if you are doing a live stream, just run this script.
 
+# Requirement
+You must have python version 3 and above installed on your machine
+(Unix-like Distro only, sorry windows user, i'm not part of ur community).
+
 ## Use Alias
 Add this code in your `.bashrc` file as an alias:
 
