@@ -19,7 +19,7 @@ Replace `<YOUR_PERSONAL_ACCESS_TOKEN>` with your GitHub personal access token.<b
 Replace `<YOUR_REPOSITORY>` with the name of your GitHub repository.<br>
 
 ## Use Alias
-Add this code in your `.bashrc` file as an alias:
+Add this code in your `.bashrc` or `.zshrc` file as an alias:
 
 ```bash
 alias gitpush='python ~/path/to/gitpush.py'
