@@ -1,7 +1,7 @@
 # otogipush
 Shortens the process of adding, committing, and pushing changes from your local repo to GitHub.<br>
 This script is useful if you have multiple GitHub accounts and want to avoid displaying your<br>
-personal access token on screen during a live stream. Just run this script.
+personal access token on screen during a live stream. Just run this script.<br>
 <br>
 but if you only use one account and use SSH, don't use this script, this script is intended<br>
 only for those who need it. I don't need comments/criticism if you don't have the needs according<br>
