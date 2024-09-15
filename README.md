@@ -1,7 +1,11 @@
 # otogipush
 Shortens git add, commit, and push your local repo to github, useful if<br>
 you have several github accounts and you don't want to show your personal access token<br>
-on the screen if you are doing a live stream, just run this script.
+on the screen if you are doing a live stream, just run this script.<br>
+<br>
+but if you only use one account and use SSH, don't use this script, this script is intended<br>
+only for those who need it. I don't need comments/criticism if you don't have the needs according<br>
+to the conditions above.
 
 # Requirement
 You must have python version 3 and above installed on your machine<br>
