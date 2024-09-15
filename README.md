@@ -41,4 +41,4 @@ gitpush "what-message for ur commit"
 # The "gitpush" command depends on the alias name you have set.
 ```
 <br>
-Remember, use the above code in your local repository, not outside the repository that you want to push to GitHub.
+ Remember to use the above code in your local repository, not outside of it.<br> Ensure you're working within the repository you want to push to GitHub.
