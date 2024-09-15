@@ -1,45 +1,45 @@
 import subprocess
-import sys
+import os
 
-# Configuration
-USERNAME = "ur_username"
-TOKEN = "personal_access_token"
+# Configuration - Replace with your GitHub credentials
+USERNAME = "<YOUR_USERNAME>"
+TOKEN = "<YOUR_PERSONAL_ACCESS_TOKEN>"
+REPO_URL = f"https://{USERNAME}:{TOKEN}@github.com/{USERNAME}/<YOUR_REPOSITORY>.git"
+CREDENTIALS_FILE = os.path.expanduser("~/.git-credentials")
 
 def run_command(command):
-    """Executes shell commands and prints the output."""
+    """Execute shell command and return the output"""
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
-    print(result.stdout)
     if result.returncode != 0:
+        print(f"Error running command: {command}")
         print(result.stderr)
-        sys.exit(result.returncode)
+    return result.stdout
 
-def main(commit_message):
-    # Make sure it is in the Git repository
-    try:
-        run_command("git rev-parse --is-inside-work-tree")
-    except SystemExit:
-        print("Error: Not a git repository (or any of the parent directories): .git")
-        sys.exit(1)
+def setup_git_credentials():
+    """Set up Git credentials file if not already present"""
+    if not os.path.exists(CREDENTIALS_FILE):
+        with open(CREDENTIALS_FILE, 'w') as file:
+            file.write(f"https://{USERNAME}:{TOKEN}@github.com\n")
 
-    # Setting up a remote URL with a token
-    try:
-        result = subprocess.run("git remote get-url origin", shell=True, text=True, capture_output=True)
-        remote_url = result.stdout.strip()
-    except SystemExit:
-        print("Error: Could not get remote URL.")
-        sys.exit(1)
-
-    https_url = f"https://{USERNAME}:{TOKEN}@{remote_url.replace('https://', '')}"
-    run_command(f"git remote set-url origin {https_url}")
-
-    # Add files, commit, and push
+def git_push(commit_message):
+    """Add files, commit, and push to GitHub"""
+    # Set up Git credentials
+    setup_git_credentials()
+    
+    # Add files and commit
     run_command("git add .")
     run_command(f"git commit -m \"{commit_message}\"")
+    
+    # Set remote URL and push
+    run_command(f"git remote set-url origin {REPO_URL}")
     run_command("git push origin main")
 
 if __name__ == "__main__":
+    import sys
     if len(sys.argv) != 2:
-        print("Usage: python gitpush.py \"Commit message\"")
+        print("Usage: python gitpush.py <commit_message>")
+        print("Example: python gitpush.py 'Your commit message'")
         sys.exit(1)
+    
     commit_message = sys.argv[1]
-    main(commit_message)
+    git_push(commit_message)

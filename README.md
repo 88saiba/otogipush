@@ -11,6 +11,13 @@ to the conditions above.
 You must have python version 3 or latest version installed on your machine<br>
 (Unix-like Distro only, sorry windows user, i'm not part of ur community).
 
+# Must Change First
+## Configuration:
+
+Replace <YOUR_USERNAME> with your GitHub username.
+Replace <YOUR_PERSONAL_ACCESS_TOKEN> with your GitHub personal access token.
+Replace <YOUR_REPOSITORY> with the name of your GitHub repository.
+
 ## Use Alias
 Add this code in your `.bashrc` file as an alias:
 
@@ -33,4 +40,5 @@ Now you can use the gitpush alias to run Python scripts in the following way:
 gitpush "what-message for ur commit"
 #Once again, the "gitpush" command depends on what alias name is set.
 ```
+<br>
 Remember, use the above code in your local repository, not outside the repository that you want to push to GitHub.
