@@ -4,7 +4,6 @@ import os
 # Configuration - Replace with your GitHub credentials
 USERNAME = "<YOUR_USERNAME>"
 TOKEN = "<YOUR_PERSONAL_ACCESS_TOKEN>"
-REPO_URL = f"https://{USERNAME}:{TOKEN}@github.com/{USERNAME}/<YOUR_REPOSITORY>.git"
 CREDENTIALS_FILE = os.path.expanduser("~/.git-credentials")
 
 def run_command(command):
@@ -21,25 +20,27 @@ def setup_git_credentials():
         with open(CREDENTIALS_FILE, 'w') as file:
             file.write(f"https://{USERNAME}:{TOKEN}@github.com\n")
 
+def get_repo_url():
+    """Retrieve the repository's remote URL"""
+    return run_command("git config --get remote.origin.url").strip()
+
 def git_push(commit_message):
     """Add files, commit, and push to GitHub"""
     # Set up Git credentials
     setup_git_credentials()
-    
+
     # Add files and commit
     run_command("git add .")
     run_command(f"git commit -m \"{commit_message}\"")
     
-    # Set remote URL and push
-    run_command(f"git remote set-url origin {REPO_URL}")
+    # Push to the current repository
     run_command("git push origin main")
 
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 2:
         print("Usage: python gitpush.py <commit_message>")
-        print("Example: python gitpush.py 'Your commit message'")
         sys.exit(1)
-    
+
     commit_message = sys.argv[1]
     git_push(commit_message)
