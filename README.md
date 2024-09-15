@@ -8,7 +8,7 @@ only for those who need it. I don't need comments/criticism if you don't have th
 to the conditions above.
 
 # Requirement
-You must have python version 3 and above installed on your machine<br>
+You must have python version 3 or latest version installed on your machine<br>
 (Unix-like Distro only, sorry windows user, i'm not part of ur community).
 
 ## Use Alias
