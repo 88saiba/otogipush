@@ -23,9 +23,9 @@ Add this code in your `.bashrc` file as an alias:
 
 ```bash
 alias gitpush='python ~/path/to/gitpush.py'
-# for the "gitpush" alias name, you can change it to any alias you like.
-# for this path: ~/path/to/gitpush.py you must change it to the location,
-# where do you put the gitpush.py file, don't make the wrong location.
+# For the "gitpush" alias name, you can change it to any alias you prefer.
+# For the path ~/path/to/gitpush.py, make sure to update it to the actual location
+# where you have placed the gitpush.py file. Ensure that you provide the correct path.
 ```
 After that, run in your terminal the following command:
 
@@ -38,7 +38,7 @@ Now you can use the gitpush alias to run Python scripts in the following way:
 
 ```bash
 gitpush "what-message for ur commit"
-#Once again, the "gitpush" command depends on what alias name is set.
+# The "gitpush" command depends on the alias name you have set.
 ```
 <br>
 Remember, use the above code in your local repository, not outside the repository that you want to push to GitHub.
