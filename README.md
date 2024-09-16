@@ -16,7 +16,6 @@ You must have python version 3 or latest installed on your machine<br>
 
 Replace `<YOUR_USERNAME>` with your GitHub username.<br>
 Replace `<YOUR_PERSONAL_ACCESS_TOKEN>` with your GitHub personal access token.<br>
-Replace `<YOUR_REPOSITORY>` with the name of your GitHub repository.<br>
 
 ## Use Alias
 Add this code in your `.bashrc` or `.zshrc` file as an alias:
