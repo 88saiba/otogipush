@@ -16,7 +16,7 @@ Replace `<YOUR_USERNAME>` with your GitHub username.<br>
 Replace `<YOUR_PERSONAL_ACCESS_TOKEN>` with your GitHub personal access token.<br>
 
 ## Use Alias
-Add this code in your `.bashrc` file on ur computer as an alias:
+Add this code in your `.bashrc` or `.zshrc` file in ur computer as an alias:
 
 ```bash
 alias gitpush='python ~/path/to/gitpush.py'
