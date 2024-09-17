@@ -1,4 +1,5 @@
-# otogipy
+# otogipy | 音葵py
+
 Shortens the process of adding, committing, and pushing changes from your local repo to GitHub<br>
 in just one command. This is an alternative way if you don't want to use SSH and prefer not to type many commands.
 
