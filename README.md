@@ -40,3 +40,7 @@ gitpush "what-message for ur commit"
 
 > Please always remember to ensure you're working within the repository you
 > want to push to GitHub.
+
+---
+
+Using [MIT LICENSE](/LICENSE)
