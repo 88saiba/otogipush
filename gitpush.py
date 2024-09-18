@@ -11,8 +11,8 @@ def run_command(command):
     result = subprocess.run(command, shell=True, text=True, capture_output=True)
     if result.returncode != 0:
         print(f"Error running command: {command}")
-        print(result.stderr)
-    return result.stdout
+        print("Error message:", result.stderr.strip())
+    return result
 
 def setup_git_credentials():
     """Set up Git credentials file if not already present"""
@@ -22,7 +22,7 @@ def setup_git_credentials():
 
 def get_repo_url():
     """Retrieve the repository's remote URL"""
-    return run_command("git config --get remote.origin.url").strip()
+    return run_command("git config --get remote.origin.url")
 
 def git_push(commit_message):
     """Add files, commit, and push to GitHub"""
@@ -31,10 +31,17 @@ def git_push(commit_message):
 
     # Add files and commit
     run_command("git add .")
-    run_command(f"git commit -m \"{commit_message}\"")
-    
+    commit_result = run_command(f"git commit -m \"{commit_message}\"")
+
     # Push to the current repository
-    run_command("git push origin main")
+    push_result = run_command("git push origin main")
+
+    # Check if push was successful
+    if push_result.returncode == 0:
+        print(f"Successfully pushed to {USERNAME}!")
+    else:
+        print(f"Failed to push to {USERNAME}.")
+        print("Push error message:", push_result.stderr.strip())
 
 if __name__ == "__main__":
     import sys
